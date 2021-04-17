@@ -4,9 +4,9 @@ const fs = require('fs');
 
 const README = (response) =>
 `# Title: ${response.Title} 
-GitHub Username: ${response.Username}
-GitHub Email: ${response.Email}
+Visit the deployed site!
 GitHub Deployed Site: ${response.Site}
+
 License [![badge:${response.License}](https://img.shields.io/badge/license-${response.License}-brightgreen)](https://opensource.org/licenses/${response.License})
 ## Table of Contents 
    * [Description](#description)
@@ -23,11 +23,11 @@ ${response.Description}
 
 ## Installation
 
-${response.Dependencies}
+    ${response.Dependencies}
 
 ## Usage
-
-${response.Useage}
+How to use 
+${response.Usage}
 
 ## License
 [![badge:${response.License}](https://img.shields.io/badge/license-${response.License}-brightgreen)](https://opensource.org/licenses/${response.License})
@@ -40,9 +40,14 @@ ${response.Project}
 
 ## Test 
 Run the following test:
-${response.Test}
+    ${response.Test}
 
 ## Questions 
+Questions about the applications contact me through:
+
+GitHub Username: https://github.com/${response.Username}
+
+Email: ${response.Email}
 
 ${response.Questions}  `
 
@@ -80,9 +85,9 @@ inquirer.prompt([
         name: "License",
         choices: [
             "MIT",
-            "APACHE 2.0",
-            "GPL 3.0",
-            "BSD 3",
+            "APACHE2.0",
+            "GPL3.0",
+            "BSD3",
             "None"
         ]
     },
@@ -114,17 +119,7 @@ inquirer.prompt([
     }
 ])
     .then((response) => {
-        // console.log (response)})
         var createReadMe = README(response)
         fs.writeFile("GenREADME.md", createReadMe, (err) =>
             err ? console.error(err) : console.log("ReadMe Created!!"))
     }).catch(err => console.log(err))
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
-
-// TODO: Create a function to initialize app
-function init() { }
-
-// Function call to initialize app
-init();
