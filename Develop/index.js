@@ -39,7 +39,8 @@ This Application is covered by ${response.License} license.
 ${response.Project}
 
 ## Test 
-Run the following test:
+Run the following test: 
+
     ${response.Test}
 
 ## Questions 
@@ -94,12 +95,14 @@ inquirer.prompt([
     {
         type: "input",
         message: "What command should be run to install dependencies?",
-        name: "Dependencies"
+        name: "Dependencies",
+        default: " npm i",
     },
     {
         type: "input",
         message: "What command should be run to run tests?",
-        name: "Test"
+        name: "Test",
+        default: " npm run test",
     },
     {
         type: "input",
