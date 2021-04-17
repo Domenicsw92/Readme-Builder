@@ -3,10 +3,11 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 const README = (response) =>
-`## Title ${response.Title} 
-    GitHub User ${response.Username}
-    Github Email ${response.Email}
-    License 
+`# Title: ${response.Title} 
+GitHub Username: ${response.Username}
+GitHub Email: ${response.Email}
+GitHub Deployed Site: ${response.Site}
+License [![badge:${response.License}](https://img.shields.io/badge/license-${response.License}-brightgreen)](https://opensource.org/licenses/${response.License})
 ## Table of Contents 
    * [Description](#description)
    * [Installation](#installation)
@@ -31,14 +32,14 @@ ${response.Useage}
 ## License
 [![badge:${response.License}](https://img.shields.io/badge/license-${response.License}-brightgreen)](https://opensource.org/licenses/${response.License})
 
-${response.License}
+This Application is covered by ${response.License} license.
 
 ## Contributing
 
 ${response.Project}
 
 ## Test 
-
+Run the following test:
 ${response.Test}
 
 ## Questions 
@@ -57,6 +58,11 @@ inquirer.prompt([
         type: "input",
         message: "What is your GitHub Email?",
         name: "Email"
+    },
+    {
+        type: "input",
+        message: "What is the GitHub deployed site?",
+        name: "Site"
     },
     {
         type: "input",
@@ -110,7 +116,7 @@ inquirer.prompt([
     .then((response) => {
         // console.log (response)})
         var createReadMe = README(response)
-        fs.writeFile("README.md", createReadMe, (err) =>
+        fs.writeFile("GenREADME.md", createReadMe, (err) =>
             err ? console.error(err) : console.log("ReadMe Created!!"))
     }).catch(err => console.log(err))
 
