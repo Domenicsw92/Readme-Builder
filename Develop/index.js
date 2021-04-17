@@ -36,7 +36,7 @@ ${response.Dependencies}
 ${response.Useage}
 
 ## License
-![badge](https://img.shields.io/badge/license-${response.License}-brightgreen) 
+![badge:(https://img.shields.io/badge/license-${response.License}-brightgreen)](https://opensource.org/licenses/${response.License})
 
 ${response.License}
 
