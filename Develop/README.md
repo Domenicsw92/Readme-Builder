@@ -10,13 +10,14 @@
         github email domenicsw92
     License 
 ## Table of Contents 
-    [Description](#description)
-    [Installation](#installation)
-    [Usage](#usage)
-    [Licesne](#license)
-    [Contributing](#contributing)
-    [Test](#test)
-    [Questions](#questions)
+
+[Description](#description)
+[Installation](#installation)
+[Usage](#usage)
+[Licesne](#license)
+[Contributing](#contributing)
+[Test](#test)
+[Questions](#questions)
 
 ## Description 
 
